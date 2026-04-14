@@ -1,9 +1,9 @@
 # Etape 1 : Build de l'application Vue.js
 FROM node:20-alpine AS build-stage
-WORKDIR /app/tpfinal-cloud
+WORKDIR /app
 COPY package*.json ./
 RUN npm install
-COPY . .
+COPY mon-app ./
 ARG BUILD_ID=local
 ENV VITE_BUILD_ID=$BUILD_ID
 RUN npm run build
