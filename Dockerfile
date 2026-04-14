@@ -1,6 +1,6 @@
 # Etape 1 : Build de l'application Vue.js
 FROM node:20-alpine AS build-stage
-WORKDIR /app
+WORKDIR /mon-app
 COPY package*.json ./
 RUN npm install
 COPY . .
