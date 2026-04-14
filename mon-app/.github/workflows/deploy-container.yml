@@ -13,11 +13,9 @@ jobs:
  username: ${{ secrets.DOCKER_USERNAME }}
  password: ${{ secrets.DOCKER_PASSWORD }}
  - name: Build Docker image
- run: docker build -t ${{ secrets.DOCKER_USERNAME }}/vue-app:${{ github.
-sha }} .
+ run: docker build -t ${{ secrets.DOCKER_USERNAME }}/vue-app:${{ github.sha }} .
  - name: Push Docker image
- run: docker push ${{ secrets.DOCKER_USERNAME }}/vue-app:${{ github.sha
-}}
+ run: docker push ${{ secrets.DOCKER_USERNAME }}/vue-app:${{ github.sha}}
  - name: Deploy to Azure Web App
  uses: azure/webapps-deploy@v2
  with:
